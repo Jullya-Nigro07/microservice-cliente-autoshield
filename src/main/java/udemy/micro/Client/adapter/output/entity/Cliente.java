@@ -1,4 +1,4 @@
-package udemy.micro.Client.adapter.output.repository.entity;
+package udemy.micro.Client.adapter.output.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-public class Client {
+public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +19,7 @@ public class Client {
     @Column
     private String name;
 
-    public Client(String name, String cpf) {
+    public Cliente(String name, String cpf) {
         this.name = name;
         this.cpf = cpf;
     }
