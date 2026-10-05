@@ -1,4 +1,4 @@
-package udemy.micro.Client.adapter.output.entity;
+package udemy.micro.cliente.adapter.output.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

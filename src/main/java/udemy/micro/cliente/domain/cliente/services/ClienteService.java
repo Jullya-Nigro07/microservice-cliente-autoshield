@@ -1,12 +1,12 @@
-package udemy.micro.Client.domain.cliente.services;
+package udemy.micro.cliente.domain.cliente.services;
 
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import udemy.micro.Client.adapter.output.entity.Cliente;
-import udemy.micro.Client.domain.cliente.dtos.ClienteRequest;
-import udemy.micro.Client.domain.cliente.dtos.ClienteResponse;
-import udemy.micro.Client.port.input.ClienteInputPort;
-import udemy.micro.Client.port.output.ClienteOutputPort;
+import udemy.micro.cliente.adapter.output.entity.Cliente;
+import udemy.micro.cliente.domain.cliente.dtos.ClienteRequest;
+import udemy.micro.cliente.domain.cliente.dtos.ClienteResponse;
+import udemy.micro.cliente.port.input.ClienteInputPort;
+import udemy.micro.cliente.port.output.ClienteOutputPort;
 
 @Service
 public class ClienteService implements ClienteInputPort {
@@ -18,7 +18,7 @@ public class ClienteService implements ClienteInputPort {
 
     @Override
     @Transactional
-    public ClienteResponse registerClient(ClienteRequest clienteRequest) {
+    public ClienteResponse registerCliente(ClienteRequest clienteRequest) {
         clienteOutputPort.findClientByCpf(clienteRequest.cpf()).ifPresent(cliente -> {
             throw new RuntimeException("CPF já cadastrado");});
 
@@ -29,8 +29,8 @@ public class ClienteService implements ClienteInputPort {
     }
 
     @Override
-    public ClienteResponse searchClient(String cpf) {
-        Cliente cliente = clienteOutputPort.findClientByCpf(cpf).orElseThrow(() -> new RuntimeException("Erro"));
+    public ClienteResponse searchCliente(String cpf) {
+        Cliente cliente = clienteOutputPort.findClientByCpf(cpf).orElseThrow(() -> new RuntimeException("Não encontrado!"));
 
         return new ClienteResponse(cliente.getId(), cliente.getName());
     }

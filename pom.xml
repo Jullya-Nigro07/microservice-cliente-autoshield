@@ -11,7 +11,7 @@
 	</parent>
 
 	<groupId>udemy.micro</groupId>
-	<artifactId>Cliente</artifactId>
+	<artifactId>cliente</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>

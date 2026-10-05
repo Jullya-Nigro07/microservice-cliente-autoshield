@@ -1,4 +1,4 @@
-package udemy.micro.Client;
+package udemy.micro.client;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

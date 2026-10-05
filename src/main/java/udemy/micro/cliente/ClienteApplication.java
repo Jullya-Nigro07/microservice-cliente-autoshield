@@ -1,4 +1,4 @@
-package udemy.micro.Client;
+package udemy.micro.client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

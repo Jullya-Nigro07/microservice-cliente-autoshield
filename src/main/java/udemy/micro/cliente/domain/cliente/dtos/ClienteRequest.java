@@ -1,4 +1,4 @@
-package udemy.micro.Client.domain.cliente.dtos;
+package udemy.micro.cliente.domain.cliente.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

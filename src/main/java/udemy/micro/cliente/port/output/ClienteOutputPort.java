@@ -1,6 +1,6 @@
-package udemy.micro.Client.port.output;
+package udemy.micro.cliente.port.output;
 
-import udemy.micro.Client.adapter.output.entity.Cliente;
+import udemy.micro.cliente.adapter.output.entity.Cliente;
 import java.util.Optional;
 
 public interface ClienteOutputPort {
