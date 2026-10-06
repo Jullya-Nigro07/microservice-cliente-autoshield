@@ -19,7 +19,7 @@ public class ClienteService implements ClienteInputPort {
     @Override
     @Transactional
     public ClienteResponse registerCliente(ClienteRequest clienteRequest) {
-        clienteOutputPort.findClientByCpf(clienteRequest.cpf()).ifPresent(cliente -> {
+        clienteOutputPort.findClienteByCpf(clienteRequest.cpf()).ifPresent(cliente -> {
             throw new RuntimeException("CPF já cadastrado");});
 
         Cliente cliente = new Cliente(clienteRequest.name(), clienteRequest.cpf());
@@ -30,7 +30,7 @@ public class ClienteService implements ClienteInputPort {
 
     @Override
     public ClienteResponse searchCliente(String cpf) {
-        Cliente cliente = clienteOutputPort.findClientByCpf(cpf).orElseThrow(() -> new RuntimeException("Não encontrado!"));
+        Cliente cliente = clienteOutputPort.findClienteByCpf(cpf).orElseThrow(() -> new RuntimeException("Não encontrado!"));
 
         return new ClienteResponse(cliente.getId(), cliente.getName());
     }
