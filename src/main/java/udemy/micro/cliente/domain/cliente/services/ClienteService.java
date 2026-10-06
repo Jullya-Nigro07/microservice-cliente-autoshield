@@ -25,13 +25,13 @@ public class ClienteService implements ClienteInputPort {
         Cliente cliente = new Cliente(clienteRequest.name(), clienteRequest.cpf());
         Cliente clientSave = clienteOutputPort.save(cliente);
 
-        return new ClienteResponse(clientSave.getId(), clientSave.getName());
+        return new ClienteResponse(clientSave.getId(), clientSave.getName(), cliente.getCpf());
     }
 
     @Override
     public ClienteResponse searchCliente(String cpf) {
         Cliente cliente = clienteOutputPort.findClienteByCpf(cpf).orElseThrow(() -> new RuntimeException("Não encontrado!"));
 
-        return new ClienteResponse(cliente.getId(), cliente.getName());
+        return new ClienteResponse(cliente.getId(), cliente.getName(), cliente.getCpf());
     }
 }
